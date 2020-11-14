@@ -1,0 +1,7 @@
+.btnfield{
+    display: flex;
+    justify-content: space-between;
+}
+#firtsst{
+    margin-top: 24px;
+}

@@ -1,0 +1,15 @@
+
+.app{
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    background: #F1F3F6;
+    width: 414px;
+    height: 736px;
+    position: absolute;
+    margin: 0 auto;
+    left:0;
+    right:0;
+    font-family: 'MuseoModerno', cursive;
+    font-style: normal;
+}
