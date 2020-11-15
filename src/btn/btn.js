@@ -1,7 +1,7 @@
 import './btn.css'
-const Btn = ({hello})=> {
+const Btn = ({hello, styleId, onTookBtn})=> {
     return(
-    <button className="btn">{hello}</button>
+    <button className="btn" id={styleId} onClick={onTookBtn} name={hello}>{hello} </button>
     );
 };
 

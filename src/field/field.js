@@ -3,7 +3,8 @@ import Btn from '../btn/btn'
 const Field = ({begginin})=> {
     return(
         <div className="field">
-            <div className="beg">{begginin}</div>
+        
+            <div className="beg" value={begginin}>{begginin}</div>
         </div>
     );
 };

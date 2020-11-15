@@ -14,7 +14,7 @@ export default class App extends Component {
       firbtn: '7',
       secbtn: '8',
       thrbtn: '9',
-      fourbtn: '%'},
+      fourbtn: '/'},
     second: {
       firbtn: '4',
       secbtn: '5',
@@ -28,25 +28,44 @@ export default class App extends Component {
       fourbtn: '-'
     },
     forth: {
-      zero: '0',
-      plus: '+'
+      firbtn: '0',
+      secbtn: 'C',
+      thrbtn: '=',
+      fourbtn: '+'
+
+
     },
     //Style on button
-    style:{
-      firbtn: 'firstybtn'
+    id:{
+      firstbtn: 'firstspecial',
+      secondbtn: 'secondspecial',
+      thirdbtn: 'thirdspecial',
+      fourbtn: 'fourspecial'
     }
-
+    
 
 
   }
+  tookNumber = (e) =>{
+    let sum = document.querySelector('.beg').getAttribute('value');
+    let name = e.target.getAttribute('name');
+    // if(name === 0){
+
+    // }
+    
+    // document.form.calcscreen.value = document.form.calcscreen.value + name ;
+    console.log(sum, ' ', name);
+  }
+
   render() {
     return (
       <div className="app">
         <CalcLab  />
         <Field begginin={this.state.beg}/>
-        <BtnField fl={this.state.first} stl="firtsst" />
-        <BtnField fl={this.state.second}/>
-        <BtnField fl={this.state.third}/>
+        <BtnField fl={this.state.first} stl="firtsst" stylebtn={this.state.id} onTook={this.tookNumber} />
+        <BtnField fl={this.state.second} stl="secsst" stylebtn={this.state.id} onTook={this.tookNumber} />
+        <BtnField fl={this.state.third} stl="thirdsst" stylebtn={this.state.id} onTook={this.tookNumber} />
+        <BtnField fl={this.state.forth} stl="fourthsst" stylebtn={this.state.id} onTook={this.tookNumber} />
         
       </div>
     );
