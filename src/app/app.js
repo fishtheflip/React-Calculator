@@ -8,7 +8,7 @@ import BtnField from '../btnfield/btnfield';
 export default class App extends Component {
   state = {
     //Default number
-    beg: 0,
+    beg: ' ',
     //State in Buttons
     first: {
       firbtn: '7',
@@ -47,14 +47,33 @@ export default class App extends Component {
 
   }
   tookNumber = (e) =>{
-    let sum = document.querySelector('.beg').getAttribute('value');
-    let name = e.target.getAttribute('name');
-    // if(name === 0){
+    let btnValue = e.target.getAttribute('name');
+    console.log(btnValue);
+    console.log(this.state.beg);
+    if(btnValue === 'C'){
+      this.setState({beg: ' '});
+      
+    }   
+    if(btnValue !== 'C' && btnValue !== '='){
 
-    // }
+      this.setState({beg: this.state.beg + btnValue});
+    }
+    if(btnValue === "="){
+      try {
+        if(this.state.beg === ' '){
+          return null;
+        } else{
+          let finSum = eval(this.state.beg);
+          this.setState({beg: finSum});
+        }
+
+      } catch (err) {
+        this.setState({beg: 'Error'});
+        setTimeout(()=> this.setState({beg: ' '}), 1500);
+      }
+    }
+
     
-    // document.form.calcscreen.value = document.form.calcscreen.value + name ;
-    console.log(sum, ' ', name);
   }
 
   render() {
