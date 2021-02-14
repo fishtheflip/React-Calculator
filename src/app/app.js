@@ -46,6 +46,7 @@ export default class App extends Component {
 
 
   }
+
   tookNumber = (e) =>{
     let btnValue = e.target.getAttribute('name');
     console.log(btnValue);
@@ -62,7 +63,7 @@ export default class App extends Component {
       try {
         if(this.state.beg === ' '){
           return null;
-        } else{
+        } else {
           let finSum = eval(this.state.beg);
           this.setState({beg: finSum});
         }

@@ -1,5 +1,4 @@
 import "./field.css";
-import Btn from '../btn/btn'
 const Field = ({begginin})=> {
     if(begginin === undefined){
         return(
